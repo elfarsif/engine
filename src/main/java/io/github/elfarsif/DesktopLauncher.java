@@ -2,6 +2,7 @@ package io.github.elfarsif;
 
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
+import com.badlogic.gdx.utils.Json;
 
 public class DesktopLauncher {
     public static void main() {
@@ -9,6 +10,8 @@ public class DesktopLauncher {
         config.setTitle("My GDX Game");
         config.setWindowedMode(800, 480);
         config.useVsync(true);
+        String jsonString = JsonParser.parseToString("gameConfig.json");
+        System.out.println(jsonString);
         new Lwjgl3Application(new Game(), config);
     }
 }
