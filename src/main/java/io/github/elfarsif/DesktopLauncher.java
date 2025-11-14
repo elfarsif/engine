@@ -10,8 +10,6 @@ public final class DesktopLauncher {
         config.setTitle("My GDX Game");
         config.setWindowedMode(800, 480);
         config.useVsync(true);
-        String jsonString = JsonParser.parseToString("gameConfig.json");
-        System.out.println(jsonString);
         new Lwjgl3Application(new Game(), config);
     }
 }

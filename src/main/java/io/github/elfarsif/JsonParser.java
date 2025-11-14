@@ -17,6 +17,7 @@ public final class JsonParser {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            System.err.println(filePath);
         }
 
 
