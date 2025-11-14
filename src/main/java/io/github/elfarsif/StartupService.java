@@ -1,5 +1,6 @@
 package io.github.elfarsif;
 
+
 public final class StartupService {
     private final ConfigLoader configLoader;
     private final DomainMapper domainMapper;
@@ -12,8 +13,8 @@ public final class StartupService {
     }
 
     public void startWithConfigFile(String filepath) {
-//        Dto dto = configLoader.load(filepath);
-//        Model model = domainMapper.fromDto(dto);
+        Dto dto = configLoader.load(filepath);
+        Model model = domainMapper.fromDto(dto);
         runtimeLayer.run();
     }
 }
