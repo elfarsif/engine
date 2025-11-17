@@ -1,4 +1,6 @@
-package io.github.elfarsif;
+package io.github.elfarsif.controller;
+
+import io.github.elfarsif.service.StartupService;
 
 public final class GameConfigController {
     private final StartupService startupService;
@@ -9,6 +11,5 @@ public final class GameConfigController {
 
     public void startGame(String filepath) {
         this.startupService.startWithConfigFile(filepath);
-
     }
 }

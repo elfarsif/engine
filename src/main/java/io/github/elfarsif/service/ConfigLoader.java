@@ -1,0 +1,20 @@
+package io.github.elfarsif.service;
+
+import io.github.elfarsif.dto.GameModelDto;
+import io.github.elfarsif.dto.SpriteDto;
+import org.json.JSONObject;
+
+import java.util.List;
+
+public final class ConfigLoader {
+    private final JsonParser jsonParser;
+
+    public ConfigLoader(JsonParser jsonParser) {this.jsonParser = jsonParser;}
+
+    public GameModelDto load(String filepath) {
+        JSONObject json = this.jsonParser.parseToJson(filepath);
+        List<SpriteDto> spriteDtos = this.jsonParser.parseSpriteList(json);
+        return new GameModelDto(spriteDtos);
+    }
+
+}

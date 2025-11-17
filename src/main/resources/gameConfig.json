@@ -1,7 +1,13 @@
 {
-  "home":"onfire",
-  "npc": {
-    "alive": "true",
-    "count": "5"
-  }
+  "sprites": [
+    {
+      "name": "down1",
+      "filepath": "C:/Users/fnelf/Documents/java projects/engine/src/main/resources/down1.png"
+    },
+    {
+      "name": "down2",
+      "filepath": "C:/Users/fnelf/Documents/java projects/engine/src/main/resources/down2.png"
+    }
+  ]
+
 }
