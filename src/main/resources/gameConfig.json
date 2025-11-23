@@ -1,12 +1,20 @@
 {
   "sprites": [
     {
-      "name": "down1",
-      "filepath": "C:/Users/fnelf/Documents/java projects/engine/src/main/resources/down1.png"
+      "name": "grass",
+      "image": {
+        "filepath": "C:/Users/fnelf/Documents/java projects/engine/src/main/resources/grass.png",
+        "width": 16,
+        "height": 16
+      }
     },
     {
       "name": "down2",
-      "filepath": "C:/Users/fnelf/Documents/java projects/engine/src/main/resources/down2.png"
+      "image": {
+        "filepath": "C:/Users/fnelf/Documents/java projects/engine/src/main/resources/down2.png",
+        "width": 16,
+        "height": 16
+      }
     }
   ]
 

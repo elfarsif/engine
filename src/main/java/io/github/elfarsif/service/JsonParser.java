@@ -1,6 +1,7 @@
 package io.github.elfarsif.service;
 
 import io.github.elfarsif.dto.GameModelDto;
+import io.github.elfarsif.dto.ImageDto;
 import io.github.elfarsif.dto.SpriteDto;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,12 +18,19 @@ public final class JsonParser {
         JSONArray sprites = json.getJSONArray("sprites");
         for (int i = 0; i<sprites.length();i++){
             JSONObject obj = sprites.getJSONObject(i);
-            SpriteDto dto = new SpriteDto(obj.getString("name"),obj.getString("filepath"));
+            JSONObject image = obj.getJSONObject("image");
+            ImageDto imageDto = new ImageDto(
+                    image.getString("filepath"),
+                    image.getInt("width"),
+                    image.getInt("height")
+            );
+            SpriteDto dto = new SpriteDto(obj.getString("name"),imageDto);
             spriteDtos.add(dto);
         }
 
         return spriteDtos;
     }
+
 
     public JSONObject parseToJson(String filePath) {
         StringBuilder content = new StringBuilder();
@@ -37,7 +45,6 @@ public final class JsonParser {
 
             }
 
-            System.out.println("LOADED json :"+content.toString());
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(filePath);

@@ -21,13 +21,16 @@ public final class Game extends ApplicationAdapter {
     public Game(GameModelDto gameModelDto){
         this.gameModelDto = gameModelDto;
 //        GameModel gameModel = mapper.toModel(gameModelDto);
-
+        System.out.println("GAMEMODELDTO __________"+gameModelDto);
     }
 
     @Override
     public void create() {
-        this.image = new Image(16,16,"C:\\Users\\fnelf\\Documents\\java projects\\engine\\src\\main\\resources\\grass.png");
-        this.background = new Background(new Sprite("grass",this.image),0,0);
+        this.image = new Image(
+                gameModelDto.getSpriteDtos().get(0).getImageDto().getWidth(),
+                gameModelDto.getSpriteDtos().get(0).getImageDto().getHeight(),
+                gameModelDto.getSpriteDtos().get(0).getImageDto().getFilepath());
+        this.background = new Background(new Sprite(gameModelDto.getSpriteDtos().get(0).getName(),this.image));
         this.batch = new SpriteBatch();
         this.gdxRenderer = new GdxRenderer(batch);
 
@@ -39,7 +42,7 @@ public final class Game extends ApplicationAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
-        gdxRenderer.draw(this.background,60,60);
+        gdxRenderer.draw(this.background,0,0);
         batch.end();
     }
 

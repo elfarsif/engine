@@ -1,22 +1,22 @@
 package io.github.elfarsif.dto;
 
-public class SpriteDto {
+public final class SpriteDto {
     private final String name;
-    private final String filepath;
+    private final ImageDto imageDto;
 
-
-    public SpriteDto(String name, String filepath) {
+    public SpriteDto(String name, ImageDto imageDto) {
         this.name = name;
-        this.filepath = filepath;
+        this.imageDto = imageDto;
     }
 
-    public String getFilepath() {        return filepath;    }
+    public ImageDto getImageDto() {        return imageDto;    }
+    public String getName() {        return name;    }
 
     @Override
     public String toString() {
         return "SpriteDto{" +
                 "name='" + name + '\'' +
-                ", filepath='" + filepath + '\'' +
+                ", imageDto=" + imageDto +
                 '}';
     }
 }

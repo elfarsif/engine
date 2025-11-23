@@ -10,7 +10,6 @@ public final class GameModelDto {
     }
 
     public List<SpriteDto> getSpriteDtos() {        return spriteDtos;    }
-
     @Override
     public String toString() {
         return "GameModelDto{" +
