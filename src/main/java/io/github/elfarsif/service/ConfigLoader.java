@@ -1,6 +1,7 @@
 package io.github.elfarsif.service;
 
 import io.github.elfarsif.dto.GameModelDto;
+import io.github.elfarsif.dto.RoomDto;
 import io.github.elfarsif.dto.SpriteDto;
 import org.json.JSONObject;
 
@@ -14,7 +15,8 @@ public final class ConfigLoader {
     public GameModelDto load(String filepath) {
         JSONObject json = this.jsonParser.parseToJson(filepath);
         List<SpriteDto> spriteDtos = this.jsonParser.parseSpriteList(json);
-        return new GameModelDto(spriteDtos);
+        List<RoomDto> roomDtos = this.jsonParser.parseRoomList(json);
+        return new GameModelDto(spriteDtos,roomDtos);
     }
 
 }

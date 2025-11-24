@@ -1,14 +1,14 @@
 package io.github.elfarsif.service;
 
-import io.github.elfarsif.dto.GameModelDto;
-import io.github.elfarsif.dto.ImageDto;
-import io.github.elfarsif.dto.SpriteDto;
+import io.github.elfarsif.dto.*;
+import io.github.elfarsif.game.model.Sprite;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public final class JsonParser {
 
@@ -30,7 +30,6 @@ public final class JsonParser {
 
         return spriteDtos;
     }
-
 
     public JSONObject parseToJson(String filePath) {
         StringBuilder content = new StringBuilder();
@@ -54,5 +53,30 @@ public final class JsonParser {
         return new JSONObject(content.toString());
     }
 
+    public List<RoomDto> parseRoomList(JSONObject json) {
+        List<RoomDto> roomDtos = new ArrayList<>();
 
+        JSONArray rooms = json.getJSONArray("rooms");
+        for (int i = 0; i<rooms.length();i++){
+            JSONObject obj = rooms.getJSONObject(i);
+
+            List<LayerDto> layerDtos = new ArrayList<>();
+            JSONArray layers = obj.getJSONArray("layers");
+            for (int j =0; j<layers.length();j++){
+                JSONObject layer = layers.getJSONObject(i);
+                List<SpriteDto> sprites = this.parseSpriteList(json);
+                SpriteDto spriteDto = sprites.stream()
+                        .filter(sprite->sprite.getName().equals(layer.getString("sprite")))
+                        .findFirst()
+                        .orElse(null);
+                LayerDto layerDto = new BackgroundDto(spriteDto);
+                layerDtos.add(layerDto);
+
+            }
+            RoomDto roomDto = new RoomDto(obj.getString("name"),layerDtos);
+            roomDtos.add(roomDto);
+        }
+
+        return roomDtos;
+    }
 }

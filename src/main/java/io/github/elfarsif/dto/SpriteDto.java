@@ -1,5 +1,7 @@
 package io.github.elfarsif.dto;
 
+import java.util.Objects;
+
 public final class SpriteDto {
     private final String name;
     private final ImageDto imageDto;

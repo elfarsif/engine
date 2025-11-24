@@ -16,6 +16,18 @@
         "height": 16
       }
     }
-  ]
+  ],
+  "rooms": [
+    {
+      "name":"room1",
+      "layers": [
+        {
+          "type": "background",
+          "name": "grass",
+          "sprite": "grass"
+        }
+      ]
 
+    }
+  ]
 }
