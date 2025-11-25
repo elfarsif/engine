@@ -4,6 +4,7 @@ import io.github.elfarsif.controller.GameConfigController;
 import io.github.elfarsif.launcher.*;
 import io.github.elfarsif.service.ConfigLoader;
 import io.github.elfarsif.service.JsonParser;
+import io.github.elfarsif.service.Mapper;
 import io.github.elfarsif.service.StartupService;
 
 public class Main {
@@ -15,8 +16,9 @@ public class Main {
 
         ConfigLoader configLoader = new ConfigLoader(jsonParser);
         RuntimeLayer runtimeLayer = new RuntimeLayer();
+        Mapper mapper = new Mapper();
 
-        StartupService startupService = new StartupService(configLoader,runtimeLayer);
+        StartupService startupService = new StartupService(configLoader,runtimeLayer,mapper);
 
         GameConfigController gameConfigController = new GameConfigController(startupService);
 

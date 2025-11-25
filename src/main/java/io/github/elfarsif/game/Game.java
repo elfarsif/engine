@@ -8,6 +8,7 @@ import io.github.elfarsif.dto.GameModelDto;
 import io.github.elfarsif.game.gdxAdapters.GdxRenderer;
 import io.github.elfarsif.game.model.Background;
 import io.github.elfarsif.game.model.Image;
+import io.github.elfarsif.game.model.Room;
 import io.github.elfarsif.game.model.Sprite;
 
 public final class Game extends ApplicationAdapter {
@@ -16,6 +17,8 @@ public final class Game extends ApplicationAdapter {
     private Image image;
     private GdxRenderer gdxRenderer;
     private Background background;
+    private Sprite grass;
+    private Room room;
 
     public Game(GameModelDto gameModelDto){
         this.gameModelDto = gameModelDto;

@@ -1,14 +1,13 @@
 package io.github.elfarsif.service;
 
 import io.github.elfarsif.dto.*;
-import io.github.elfarsif.game.model.Sprite;
+import io.github.elfarsif.game.model.Image;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public final class JsonParser {
 
@@ -78,5 +77,21 @@ public final class JsonParser {
         }
 
         return roomDtos;
+    }
+
+    public List<ImageDto> parseImageList(JSONObject json) {
+        List<ImageDto> imageDtos = new ArrayList<>();
+
+        JSONArray images = json.getJSONArray("images");
+        for (int i = 0;i<images.length();i++){
+            JSONObject image = images.getJSONObject(i);
+            ImageDto imageDto = new ImageDto(
+                    image.getString("filepath"),
+                    image.getInt("width"),
+                    image.getInt("height")
+            );
+            imageDtos.add(imageDto);
+        }
+        return imageDtos;
     }
 }
