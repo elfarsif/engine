@@ -9,10 +9,10 @@ public final class Room {
         this.layers = layers;
     }
 
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Room{" +
+                "layers=" + layers +
+                '}';
+    }
 }

@@ -15,4 +15,12 @@ public final class Image implements Drawable{
     @Override public float getHeight() {        return height;    }
     @Override public String getFilepath() {        return filepath;    }
     @Override public Image getImage() {return this;   }
+    @Override
+    public String toString() {
+        return "Image{" +
+                "width=" + width +
+                ", height=" + height +
+                ", filepath='" + filepath + '\'' +
+                '}';
+    }
 }

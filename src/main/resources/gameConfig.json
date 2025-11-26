@@ -1,16 +1,4 @@
 {
-  "images": [
-    {
-      "filepath": "C:/Users/fnelf/Documents/java projects/engine/src/main/resources/grass.png",
-      "width": 16,
-      "height": 16
-    },
-    {
-      "filepath": "C:/Users/fnelf/Documents/java projects/engine/src/main/resources/down2.png",
-      "width": 16,
-      "height": 16
-    }
-  ],
   "sprites": [
     {
       "name": "grass",
@@ -36,6 +24,11 @@
         {
           "type": "background",
           "name": "grass",
+          "sprite": "grass"
+        },
+        {
+          "type": "background",
+          "name": "grass2",
           "sprite": "grass"
         }
       ]

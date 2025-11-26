@@ -15,4 +15,11 @@ public final class Sprite implements Drawable{
     @Override public String getFilepath() {        return this.image.getFilepath();    }
     @Override public Image getImage() {return this.image;   }
 
+    @Override
+    public String toString() {
+        return "Sprite{" +
+                "name='" + name + '\'' +
+                ", image=" + image +
+                '}';
+    }
 }

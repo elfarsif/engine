@@ -11,6 +11,8 @@ public final class RoomDto {
         this.layers = layers;
     }
 
+    public String getName() {        return name;    }
+    public List<LayerDto> getLayers() {        return layers;    }
     @Override
     public String toString() {
         return "RoomDto{" +
