@@ -1,11 +1,11 @@
 package io.github.elfarsif.service;
 
 import io.github.elfarsif.dto.*;
-import io.github.elfarsif.game.model.*;
+import io.github.elfarsif.model.*;
 
 import java.util.List;
 
-public class Mapper {
+public final class Mapper {
 
     public GameModel toModel(GameModelDto gameModelDto) {
         List<Sprite> sprites = gameModelDto.getSpriteDtos()

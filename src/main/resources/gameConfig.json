@@ -25,11 +25,6 @@
           "type": "background",
           "name": "grass",
           "sprite": "grass"
-        },
-        {
-          "type": "background",
-          "name": "grass2",
-          "sprite": "grass"
         }
       ]
 

@@ -1,7 +1,6 @@
 package io.github.elfarsif.service;
 
 import io.github.elfarsif.dto.*;
-import io.github.elfarsif.game.model.Image;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -62,7 +61,7 @@ public final class JsonParser {
             List<LayerDto> layerDtos = new ArrayList<>();
             JSONArray layers = obj.getJSONArray("layers");
             for (int j =0; j<layers.length();j++){
-                JSONObject layer = layers.getJSONObject(i);
+                JSONObject layer = layers.getJSONObject(j);
                 List<SpriteDto> sprites = this.parseSpriteList(json);
                 SpriteDto spriteDto = sprites.stream()
                         .filter(sprite->sprite.getName().equals(layer.getString("sprite")))

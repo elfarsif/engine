@@ -3,7 +3,7 @@ package io.github.elfarsif.game.gdxAdapters;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import io.github.elfarsif.game.model.Drawable;
+import io.github.elfarsif.model.Drawable;
 
 import java.util.HashMap;
 import java.util.Map;

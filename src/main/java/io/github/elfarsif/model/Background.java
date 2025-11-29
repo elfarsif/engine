@@ -1,4 +1,4 @@
-package io.github.elfarsif.game.model;
+package io.github.elfarsif.model;
 
 public final class Background implements Layer,Drawable {
     private final Sprite sprite;

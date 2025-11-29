@@ -1,4 +1,4 @@
-package io.github.elfarsif.game.model;
+package io.github.elfarsif.model;
 
 public final class Image implements Drawable{
     private final int width;

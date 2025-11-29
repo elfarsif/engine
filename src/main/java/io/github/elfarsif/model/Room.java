@@ -1,4 +1,4 @@
-package io.github.elfarsif.game.model;
+package io.github.elfarsif.model;
 
 import java.util.List;
 

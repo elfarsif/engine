@@ -1,4 +1,4 @@
-package io.github.elfarsif.game.model;
+package io.github.elfarsif.model;
 
 
 public final class Sprite implements Drawable{
@@ -10,6 +10,7 @@ public final class Sprite implements Drawable{
         this.image = image;
     }
 
+    public String getName() {        return name;    }
     @Override public float getWidth() {        return this.image.getWidth();    }
     @Override public float getHeight() {        return this.image.getHeight();    }
     @Override public String getFilepath() {        return this.image.getFilepath();    }
