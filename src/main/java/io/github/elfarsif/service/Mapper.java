@@ -8,11 +8,11 @@ import java.util.List;
 public final class Mapper {
 
     public GameModel toModel(GameModelDto gameModelDto) {
-        List<Sprite> sprites = gameModelDto.getSpriteDtos()
+        List<Sprite> sprites = gameModelDto.spriteDtos()
                 .stream()
                 .map(spriteDto -> this.toModel(spriteDto))
                 .toList();
-        List<Room> rooms = gameModelDto.getRoomDtos()
+        List<Room> rooms = gameModelDto.roomDtos()
                 .stream()
                 .map(roomDto -> this.toModel(roomDto))
                 .toList();
@@ -20,14 +20,14 @@ public final class Mapper {
     }
 
     private Room toModel(RoomDto roomDto){
-        return new Room(roomDto.getLayers()
+        return new Room(roomDto.layerDtos()
                 .stream()
                 .map(layerDto -> this.toModel(layerDto))
                 .toList());
     }
 
     private Image toModel(ImageDto imageDto){
-        return new Image(imageDto.getWidth(),imageDto.getHeight(),imageDto.getFilepath());
+        return new Image(imageDto.width(),imageDto.height(),imageDto.filepath());
     }
 
     private Layer toModel(LayerDto layerDto){
@@ -35,7 +35,7 @@ public final class Mapper {
     }
 
     private Sprite toModel(SpriteDto spriteDto){
-        return new Sprite(spriteDto.getName(),this.toModel(spriteDto.getImageDto()));
+        return new Sprite(spriteDto.name(),this.toModel(spriteDto.imageDto()));
     }
 
 

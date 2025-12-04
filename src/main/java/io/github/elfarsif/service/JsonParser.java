@@ -64,7 +64,7 @@ public final class JsonParser {
                 JSONObject layer = layers.getJSONObject(j);
                 List<SpriteDto> sprites = this.parseSpriteList(json);
                 SpriteDto spriteDto = sprites.stream()
-                        .filter(sprite->sprite.getName().equals(layer.getString("sprite")))
+                        .filter(sprite->sprite.name().equals(layer.getString("sprite")))
                         .findFirst()
                         .orElse(null);
                 LayerDto layerDto = new BackgroundDto(spriteDto);
