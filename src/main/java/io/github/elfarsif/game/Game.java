@@ -12,6 +12,7 @@ public final class Game extends ApplicationAdapter {
     private SpriteBatch batch;
     private GdxRenderer gdxRenderer;
     private Background background;
+    private Room room;
 
     public Game(GameModel gameModel){
         this.gameModel = gameModel;
@@ -20,7 +21,8 @@ public final class Game extends ApplicationAdapter {
 
     @Override
     public void create() {
-        this.background = new Background(new Sprite(gameModel.getSprites().get(0).getName(),this.gameModel.getSprites().get(0).getImage()));
+        this.background = (Background) gameModel.getRooms().get(0).getLayers().get(0);
+        this.room = gameModel.getRooms().get(0);
         this.batch = new SpriteBatch();
         this.gdxRenderer = new GdxRenderer(batch);
 
@@ -32,7 +34,7 @@ public final class Game extends ApplicationAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
-        gdxRenderer.draw(this.background,0,0);
+        gdxRenderer.draw(this.room);
         batch.end();
     }
 

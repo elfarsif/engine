@@ -9,6 +9,7 @@ public final class Room {
         this.layers = layers;
     }
 
+    public List<Layer> getLayers(){return this.layers;}
     @Override
     public String toString() {
         return "Room{" +

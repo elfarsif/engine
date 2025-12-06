@@ -1,4 +1,4 @@
 package io.github.elfarsif.model;
 
-public interface Layer {
+public interface Layer extends Drawable {
 }
