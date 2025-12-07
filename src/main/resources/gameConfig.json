@@ -24,7 +24,9 @@
         {
           "type": "background",
           "name": "grass",
-          "sprite": "grass"
+          "sprite": "grass",
+          "horizontalTile": true,
+          "verticalTile": true
         }
       ]
 

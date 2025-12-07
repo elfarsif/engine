@@ -22,7 +22,7 @@ public final class Mapper {
     private Room toModel(RoomDto roomDto){
         return new Room(roomDto.layerDtos()
                 .stream()
-                .map(layerDto -> this.toModel(layerDto))
+                .map(layerDto -> this.toModel((BackgroundDto)layerDto))
                 .toList());
     }
 
@@ -30,8 +30,12 @@ public final class Mapper {
         return new Image(imageDto.width(),imageDto.height(),imageDto.filepath());
     }
 
-    private Layer toModel(LayerDto layerDto){
-        return new Background(this.toModel(layerDto.getSpriteDto()));
+    private Layer toModel(BackgroundDto backgroundDto){
+        return new Background(
+                this.toModel(backgroundDto.getSpriteDto()),
+                backgroundDto.verticalTile(),
+                backgroundDto.horizontalTile()
+        );
     }
 
     private Sprite toModel(SpriteDto spriteDto){

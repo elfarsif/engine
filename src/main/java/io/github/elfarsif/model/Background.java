@@ -2,9 +2,13 @@ package io.github.elfarsif.model;
 
 public final class Background implements Layer,Drawable {
     private final Sprite sprite;
+    private final Boolean verticalTile;
+    private final Boolean horizontalTile;
 
-    public Background(Sprite sprite) {
+    public Background(Sprite sprite, Boolean verticalTile, Boolean horizontalTile) {
         this.sprite = sprite;
+        this.verticalTile = verticalTile;
+        this.horizontalTile = horizontalTile;
     }
 
     @Override public float getWidth() {        return this.sprite.getImage().getWidth();    }
@@ -15,6 +19,8 @@ public final class Background implements Layer,Drawable {
     public String toString() {
         return "Background{" +
                 "sprite=" + sprite +
+                ", verticalTile=" + verticalTile +
+                ", horizontalTile=" + horizontalTile +
                 '}';
     }
 }

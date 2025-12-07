@@ -1,16 +1,5 @@
 package io.github.elfarsif.dto;
 
-public final class BackgroundDto implements LayerDto{
-    private final SpriteDto spriteDto;
-
-    public BackgroundDto(SpriteDto spriteDto) {this.spriteDto = spriteDto;}
-
+public record BackgroundDto(SpriteDto spriteDto,Boolean verticalTile,Boolean horizontalTile) implements LayerDto{
     @Override public SpriteDto getSpriteDto() {        return spriteDto;    }
-
-    @Override
-    public String toString() {
-        return "BackgroundDto{" +
-                "spriteDto=" + spriteDto +
-                '}';
-    }
 }

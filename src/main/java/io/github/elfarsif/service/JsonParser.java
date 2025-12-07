@@ -67,7 +67,8 @@ public final class JsonParser {
                         .filter(sprite->sprite.name().equals(layer.getString("sprite")))
                         .findFirst()
                         .orElse(null);
-                LayerDto layerDto = new BackgroundDto(spriteDto);
+
+                LayerDto layerDto = new BackgroundDto(spriteDto,layer.getBoolean("verticalTile"),layer.getBoolean("horizontalTile"));
                 layerDtos.add(layerDto);
 
             }

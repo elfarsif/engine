@@ -11,7 +11,6 @@ public final class Game extends ApplicationAdapter {
     private final GameModel gameModel;
     private SpriteBatch batch;
     private GdxRenderer gdxRenderer;
-    private Background background;
     private Room room;
 
     public Game(GameModel gameModel){
@@ -21,11 +20,9 @@ public final class Game extends ApplicationAdapter {
 
     @Override
     public void create() {
-        this.background = (Background) gameModel.getRooms().get(0).getLayers().get(0);
         this.room = gameModel.getRooms().get(0);
         this.batch = new SpriteBatch();
         this.gdxRenderer = new GdxRenderer(batch);
-
     }
 
     @Override
