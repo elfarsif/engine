@@ -3,6 +3,7 @@ package io.github.elfarsif.game.gdxAdapters;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import io.github.elfarsif.model.Background;
 import io.github.elfarsif.model.Drawable;
 import io.github.elfarsif.model.Room;
 
@@ -26,7 +27,13 @@ public final class GdxRenderer {
 
     public void draw(Room room){
         Drawable layer = room.getLayers().get(0);
-        this.draw(layer,0,0);
+        Background background = (Background) room.getLayers().get(0);
+        Boolean verticalTile = background.getVerticalTile();
+        Boolean horizontalTile = background.getHorizontalTile();
+        for (int x =0;x<20;x++){
+            this.draw(layer,x*16,0);
+
+        }
     }
 
     private Texture getTexture(Drawable drawable) {

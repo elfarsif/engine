@@ -15,6 +15,8 @@ public final class Background implements Layer,Drawable {
     @Override public float getHeight() {        return this.sprite.getImage().getHeight();    }
     @Override public String getFilepath() {        return this.sprite.getImage().getFilepath();    }
     @Override public Image getImage() {return this.sprite.getImage();   }
+    public Boolean getVerticalTile() {        return verticalTile;    }
+    public Boolean getHorizontalTile() {        return horizontalTile;    }
     @Override
     public String toString() {
         return "Background{" +
