@@ -30,9 +30,16 @@ public final class GdxRenderer {
         Background background = (Background) room.getLayers().get(0);
         Boolean verticalTile = background.getVerticalTile();
         Boolean horizontalTile = background.getHorizontalTile();
-        for (int x =0;x<20;x++){
-            this.draw(layer,x*16,0);
-
+        this.draw(layer,0,0);
+        if (horizontalTile){
+            for (int x =0;x<20;x++){
+                this.draw(layer,x*16,0);
+                if (verticalTile){
+                    for (int y =0;y<20;y++){
+                        this.draw(layer,x*16,y*16);
+                    }
+                }
+            }
         }
     }
 
